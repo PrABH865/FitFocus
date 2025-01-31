@@ -1,23 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
     <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        /* background: #a18888; */
+        background-image: url("https://img.freepik.com/free-vector/cartoon-satisfied-customer-calling-user-helpline-operator-man-headset_33099-360.jpg?semt=ais_hybrid");
+        background-repeat: no-repeat;
+        background-position: right;
+        backdrop-filter: blur(3px);
+      }
       nav ul {
         display: flex;
         list-style: none;
         padding-left: 10px;
         gap: 10px;
       }
+      nav ul li {
+        display: inline;
+        margin-right: 20px;
+      }
       nav ul li a {
         text-decoration: none;
         color: black;
         font-size: 20px;
       }
+      .content {
+        padding: 20px;
+      }
+      .content h2 {
+        font-size: 30px;
+      }
+      .content p {
+        font-size: 18px;
+      }
+      fieldset {
+        margin-left: 2.3rem;
+        padding: 60px;
+        border-radius: 10px;
+      }
+      fieldset legend {
+        font-size: 30px;
+        color: #212422;
+      }
+      .contact-form {
+        display: flex;
+        margin-top: 20px;
+      }
+      .contact-form label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 16px;
+      }
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        font-size: 16px;
+      }
+      .contact-form button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      .contact-form button:hover {
+        background-color: #45a049;
+      }
+      .contact-form #nam::placeholder{
+
+      }
     </style>
-<nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contactus.html">Contact</a></li>
-    <li><a href="nutrition.html">Nutrition</a></li>
-    <li><a href="progress.html">Progress</a></li>
-    <li><a href="workouts.html">Workouts</a></li>
-  </ul>
-</nav>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contactus.html">Contact</a></li>
+        <li><a href="nutrition.html">Nutrition</a></li>
+        <li><a href="progress.html">Progress</a></li>
+        <li><a href="workouts.html">Workouts</a></li>
+      </ul>
+    </nav>
+    <div class="content">
+      <div class="contact-form">
+        <fieldset>
+          <legend><h2>Contact Us</h2></legend>
+          <form method="post">
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your name"
+              required
+            />
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+          </form>
+        </fieldset>
+      </div>
+    </div>
+    <p>
+      If you have any questions, feedback, or need assistance, please feel free
+      to reach out to us. We're here to help you on your fitness journey.
+    </p>
+  </body>
+</html>
