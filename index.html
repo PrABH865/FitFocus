@@ -4,17 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link rel="shortcut icon" href="https://t4.ftcdn.net/jpg/01/82/48/97/240_F_182489700_p3ePNdreuiMMtiF8M4LbETN3QW52wg2c.jpg" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="https://t4.ftcdn.net/jpg/01/82/48/97/240_F_182489700_p3ePNdreuiMMtiF8M4LbETN3QW52wg2c.jpg"
+      type="image/x-icon"
+    />
     <style>
       body {
         font-family: fantasy;
         margin: 0;
         padding: 0;
+        background: scroll;
       }
       nav ul {
         list-style-type: none;
         padding-left: 10px;
         gap: 10px;
+        z-index: 5;
       }
       nav ul li {
         display: inline;
@@ -26,17 +32,16 @@
         font-size: 20px;
       }
       .hero {
-        background-image: url('https://example.com/hero-image.jpg');
+        background-image: url("https://example.com/hero-image.jpg");
         background-size: cover;
         background-position: center;
-        height: 400px;
+        height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
-        color: white;
         text-align: center;
       }
-      .hero video{
+      .hero video {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -47,9 +52,25 @@
       }
       .hero h1 {
         font-size: 50px;
+        position: relative;
+      }
+      .hero img {
+        background: transparent;
+        mix-blend-mode: color-burn;
+        mask-image: url(Images/WhatsApp\ Image\ 2025-02-01\ at\ 12.23.04_a12b5570.png);
+        border-radius: 10px;
+        /* margin-top: 0; */
+        clip-path: circle();
+        height: 20px;
+        width: 20px;
+        position: absolute;
+        padding-left: auto;
+        padding: 20px;
+  
       }
       .content {
         padding: 20px;
+        z-index: 2;
       }
       .content h2 {
         font-size: 30px;
@@ -57,13 +78,19 @@
       .content p {
         font-size: 18px;
       }
+      video {
+        opacity: 0.3;
+      }
+      video::-webkit-media-controls {
+        display: none;
+      }
     </style>
   </head>
   <body>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="about.html" id="about">About</a></li>
         <li><a href="contactus.html">Contact</a></li>
         <li><a href="nutrition.html">Nutrition</a></li>
         <li><a href="progress.html">Progress</a></li>
@@ -71,12 +98,60 @@
       </ul>
     </nav>
     <div class="hero">
-      <video autoplay video\mixkit-man-jogging-on-a-pedestrian-bridge-in-the-city-40766-hd-ready.mp4"></video>
+      <video
+        src="video/mixkit-man-jogging-on-a-pedestrian-bridge-in-the-city-40766-hd-ready.mp4"
+        autoplay
+      ></video>
+      <img src="Images/WhatsApp Image 2025-02-01 at 12.23.04_a12b5570.png" height="100px" alt="">
       <h1>Welcome to FitFocus</h1>
     </div>
     <div class="content">
       <h2>Get Fit, Stay Healthy</h2>
-      <p>Welcome to FitFocus, your ultimate fitness planner. Whether you're looking to lose weight, build muscle, or just stay healthy, we have the tools and resources to help you achieve your goals. Explore our workouts, nutrition plans, and progress tracking features to get started on your fitness journey today.</p>
+      <p>
+        Welcome to FitFocus, your ultimate fitness planner. Whether you're
+        looking to lose weight, build muscle, or just stay healthy, we have the
+        tools and resources to help you achieve your goals. Explore our
+        workouts, nutrition plans, and progress tracking features to get started
+        on your fitness journey today.
+      </p>
     </div>
+
+    <div class="about">
+      <h2>About FitFocus</h2>
+      <p>
+        FitFocus is dedicated to helping you achieve your fitness goals. Our
+        mission is to provide you with the best tools, resources, and support to
+        make your fitness journey successful and enjoyable. Whether you're a
+        beginner or a seasoned athlete, we have something for everyone.
+      </p>
+      <div class="team">
+        <h3>Our Team</h3>
+        <p>
+          Our team of experienced fitness professionals is here to guide and
+          support you every step of the way. We are passionate about fitness and
+          committed to helping you reach your full potential.
+        </p>
+      </div>
+      <div class="team">
+        <h3>Our Vision</h3>
+        <p>
+          We envision a world where everyone has the opportunity to lead a
+          healthy and active lifestyle. At FitFocus, we strive to make fitness
+          accessible, enjoyable, and sustainable for all.
+        </p>
+      </div>
+    </div>
+    <script>
+      const about = document.querySelector(".about");
+      const aboutBTN = document.querySelector("#about");
+
+      aboutBTN.addEventListener("click", () => {
+        about.scrollTo({
+          top: 100,
+          left: 100,
+          behavior: "smooth",
+        });
+      });
+    </script>
   </body>
 </html>

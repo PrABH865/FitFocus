@@ -42,6 +42,21 @@
       .progress-section p {
         font-size: 16px;
       }
+      .contact-form {
+        background: #bea8a8;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        min-height: 50vh;
+        min-width: 50vw;
+      }
+      .contact-form input {
+        position: absolute;
+        
+      }
+      .contact-form label {
+        position: absolute;
+      }
     </style>
   </head>
   <body>
@@ -94,6 +109,12 @@
           see the results of your hard work.
         </p>
       </div>
+    </div>
+    <div class="contact-form">
+      <form method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" />
+      </form>
     </div>
   </body>
 </html>
