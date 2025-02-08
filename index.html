@@ -9,12 +9,12 @@
       href="https://t4.ftcdn.net/jpg/01/82/48/97/240_F_182489700_p3ePNdreuiMMtiF8M4LbETN3QW52wg2c.jpg"
       type="image/x-icon"
     />
+    <script src="https://unpkg.com/scrollreveal"></script>
     <style>
       body {
-        font-family: Arial, sans-serif;
+        font-family: fantasy;
         margin: 0;
         padding: 0;
-        background: scroll;
       }
       nav ul {
         list-style-type: none;
@@ -37,9 +37,11 @@
         background-position: center;
         height: 100vh;
         display: flex;
+        position: relative;
         justify-content: center;
         align-items: center;
         text-align: center;
+        
       }
       .hero video {
         width: 100%;
@@ -54,22 +56,29 @@
         font-size: 50px;
         position: relative;
       }
-      .hero img {
+      /* .hero img {
         background: transparent;
         mix-blend-mode: color-burn;
         mask-image: url(Images/WhatsApp\ Image\ 2025-02-01\ at\ 12.23.04_a12b5570.png);
         border-radius: 10px;
-        /* margin-top: 0; */
+        margin-top: 0;
         clip-path: circle();
         height: 20px;
         width: 20px;
         position: absolute;
         padding-left: auto;
         padding: 20px;
-      }
+      } */
       .content {
-        padding: 20px;
+        padding: 120px;
         z-index: 2;
+        position: absolute;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
       }
       .content h2 {
         font-size: 30px;
@@ -97,18 +106,14 @@
       </ul>
     </nav>
     <div class="hero">
+      <!-- <img src="Images/WhatsApp Image 2025-02-01 at 12.23.04_a12b5570.png" height="100px" alt=""> -->
       <video
         src="video/mixkit-man-jogging-on-a-pedestrian-bridge-in-the-city-40766-hd-ready.mp4"
         autoplay
       ></video>
-      <img
-        src="Images/WhatsApp Image 2025-02-01 at 12.23.04_a12b5570.png"
-        height="100px"
-        alt=""
-      />
-      <h1>Welcome to FitFocus</h1>
     </div>
     <div class="content">
+      <h1>Welcome to FitFocus</h1>
       <h2>Get Fit, Stay Healthy</h2>
       <p>
         Welcome to FitFocus, your ultimate fitness planner. Whether you're
@@ -118,40 +123,24 @@
         on your fitness journey today.
       </p>
     </div>
-
-    <div class="about">
-      <h2>About FitFocus</h2>
-      <p>
-        FitFocus is dedicated to helping you achieve your fitness goals. Our
-        mission is to provide you with the best tools, resources, and support to
-        make your fitness journey successful and enjoyable. Whether you're a
-        beginner or a seasoned athlete, we have something for everyone.
-      </p>
-      <div class="team">
-        <h3>Our Team</h3>
-        <p>
-          Our team of experienced fitness professionals is here to guide and
-          support you every step of the way. We are passionate about fitness and
-          committed to helping you reach your full potential.
-        </p>
-      </div>
-      <div class="team">
-        <h3>Our Vision</h3>
-        <p>
-          We envision a world where everyone has the opportunity to lead a
-          healthy and active lifestyle. At FitFocus, we strive to make fitness
-          accessible, enjoyable, and sustainable for all.
-        </p>
-      </div>
     </div>
-
     <script>
-      const about = document.querySelector(".about");
-      const aboutBTN = document.querySelector("#about");
+    ScrollReveal().reveal('.content h1', {
+    origin: 'right',
+    delay: 200,
+    distance: "100px"
+  });
+  ScrollReveal().reveal('.content h2', {
+    origin: 'left',
+    delay: 500,
+    distance: "100px"
+  });
+  ScrollReveal().reveal('.content p', {
+    origin: 'bottom',
+    delay: 700,
+    distance: "200px"
+  });
 
-      aboutBTN.addEventListener("click", () => {
-        about.scrollIntoView({ behavior: "smooth" });
-      });
     </script>
   </body>
 </html>
