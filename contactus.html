@@ -13,7 +13,8 @@
         background-image: url("https://img.freepik.com/free-vector/cartoon-satisfied-customer-calling-user-helpline-operator-man-headset_33099-360.jpg?semt=ais_hybrid");
         background-repeat: no-repeat;
         background-position: right;
-        backdrop-filter: blur(3px);
+        background-clip: border-box;
+        /* backdrop-filter: blur(3px); */
       }
       nav ul {
         display: flex;
@@ -61,27 +62,29 @@
         border-radius: 10px;
         border: 2px solid;
         line-height: 30px;
-        /* z-index: 1111; */
+        z-index: 1111;
       }
-      .contact-form label {
+      .contact-form .label {
         /* display: block;
         margin-bottom: 5px;
         font-size: 16px; */
         position: absolute;
         transition: 0.3s ease;
-        padding: 8px 20px;
+        padding: 6px 18px;
         margin: 0 10px;
-        
+      
       }
       input:focus,
       input:valid {
         color: #45a049;
         border: 2px solid green;
       }
-      input:focus + label,
-      input:valid + label {
-        transform: translate(-16px, -16px);
-        /* background-blend-mode: difference; */
+      input:focus + .label,
+      input:valid + .label {
+        transform: translate(-16px, -16px) scale(1);
+        /* line-height: 60px; */
+        z-index: 1112;
+        color: #45a049;
       }
       .contact-form textarea {
         width: 100%;
@@ -90,18 +93,16 @@
         font-size: 16px;
       }
       .contact-form button {
+        margin-top: 100px;
         padding: 10px 20px;
         font-size: 16px;
-        /* background-color: #4caf50; */
+        background-color: #4caf50;
         color: white;
         border: none;
         cursor: pointer;
       }
       .contact-form button:hover {
         background-color: #45a049;
-      }
-      .contact-form button {
-       
       }
     </style>
   </head>
@@ -118,12 +119,11 @@
     </nav>
     <div class="content">
       <div class="contact-form">
-        
         <fieldset>
           <legend><h2>Contact Us</h2></legend>
           <form method="post">
             <input type="text" id="name" name="name" required />
-            <label for="name">Name</label>
+            <label for="name" class="label">Name</label>
             <!-- <label for="email">Email:</label>
             <input type="email" id="email" name="email" required />
 
