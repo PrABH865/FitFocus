@@ -10,17 +10,25 @@
       type="image/x-icon"
     />
     <script src="https://unpkg.com/scrollreveal"></script>
+
     <style>
       body {
         font-family: fantasy;
         margin: 0;
         padding: 0;
+        background: linear-gradient(100deg, #c33745 0%, #c0c3a2 100%)
+      }
+      nav {
+        position: relative;
+        z-index: 10;
       }
       nav ul {
         list-style-type: none;
         padding-left: 10px;
         gap: 10px;
         z-index: 5;
+        display: flex;
+        justify-content: center;
       }
       nav ul li {
         display: inline;
@@ -29,10 +37,10 @@
       nav ul li a {
         text-decoration: none;
         color: black;
-        font-size: 20px;
+        font-size: 25px;
       }
       .hero {
-        background-image: url("https://example.com/hero-image.jpg");
+        /* background-image: url("https://example.com/hero-image.jpg"); */
         background-size: cover;
         background-position: center;
         height: 100vh;
@@ -41,7 +49,6 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        
       }
       .hero video {
         width: 100%;
@@ -56,19 +63,18 @@
         font-size: 50px;
         position: relative;
       }
-      /* .hero img {
+      .hero img {
         background: transparent;
         mix-blend-mode: color-burn;
-        mask-image: url(Images/WhatsApp\ Image\ 2025-02-01\ at\ 12.23.04_a12b5570.png);
-        border-radius: 10px;
-        margin-top: 0;
-        clip-path: circle();
-        height: 20px;
-        width: 20px;
+        border-radius: 20px;
+        /* margin-top: 0; */
+        height: 5rem;
+        width:auto;
+        top: 0;
         position: absolute;
         padding-left: auto;
         padding: 20px;
-      } */
+      }
       .content {
         padding: 120px;
         z-index: 2;
@@ -80,6 +86,9 @@
         text-align: center;
         flex-direction: column;
       }
+      .content h1 {
+         font-size: 5rem;
+      }
       .content h2 {
         font-size: 30px;
       }
@@ -87,18 +96,67 @@
         font-size: 18px;
       }
       video {
-        opacity: 0.3;
+        opacity: 0.7;
       }
       video::-webkit-media-controls {
         display: none;
       }
+      .services-container {
+        height: 100vh;
+        display: flex;
+      }
+      .services-container img {
+        /* flex-basis: 50%; */
+        padding: 40px;
+      }
+      #arrow_drawn {
+        margin-top: 50px;
+        position: relative;
+      }
+      #servicesBTN {
+        background: none;
+        background-blend-mode: multiply;
+        outline: none;
+        border: .6px dotted;
+        border-radius: 4px;
+        /* padding: 50px; */
+        font-size: 2rem;
+        font-family: fantasy;
+      }
+      #servicesBTN:hover {
+        border: .5px solid;
+      }
+      .services-container{
+        background: #4e4848;
+      }
+      figure {
+        display: flex;
+        justify-content: center;
+        /* flex-direction: row; */
+        flex-wrap: wrap;
+       
+        height: 100vh;
+      }
+      figure > figcaption {
+        font-size: 5rem;
+      }
+      figure > img {
+        height: 13rem;
+        width: auto;
+        /* aspect-ratio: auto; */
+        filter: contrast(2.5);
+        background-blend-mode: color-burn;
+      }
+      /* figure >.img1 +.img2 {
+        aspect-ratio: 4/3;
+      } */
     </style>
   </head>
   <body>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" id="about">About</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="contactus.html">Contact</a></li>
         <li><a href="nutrition.html">Nutrition</a></li>
         <li><a href="progress.html">Progress</a></li>
@@ -106,10 +164,10 @@
       </ul>
     </nav>
     <div class="hero">
-      <!-- <img src="Images/WhatsApp Image 2025-02-01 at 12.23.04_a12b5570.png" height="100px" alt=""> -->
+      <img src="Images/logo2.png" height="100px" alt="" id="logo">
       <video
         src="video/mixkit-man-jogging-on-a-pedestrian-bridge-in-the-city-40766-hd-ready.mp4"
-        autoplay
+        autoplay+
       ></video>
     </div>
     <div class="content">
@@ -122,25 +180,33 @@
         workouts, nutrition plans, and progress tracking features to get started
         on your fitness journey today.
       </p>
+      <img src="Images/drawn_arrow.png" alt="drawn_arrow" width="80px" id="arrow_drawn">
+      <button id="servicesBTN">Our Exvercises</button>
     </div>
     </div>
-    <script>
-    ScrollReveal().reveal('.content h1', {
-    origin: 'right',
-    delay: 200,
-    distance: "100px"
-  });
-  ScrollReveal().reveal('.content h2', {
-    origin: 'left',
-    delay: 500,
-    distance: "100px"
-  });
-  ScrollReveal().reveal('.content p', {
-    origin: 'bottom',
-    delay: 700,
-    distance: "200px"
-  });
+    <section id="services">
+      <div class="services-container">
+        <!-- <figure>
+       <figcaption>Push it up </figcaption>
+          <img id="img1" src="Images/pexels-823sl-2294361.jpg" alt="img" height="120rem" width="auto">
+        </figure>
+        <figure>
+          <figcaption>Dumbling</figcaption>
+          <img id="img2" src="Images/pexels-victorfreitas-791763.jpg" alt="img" height="120rem" width="auto">
+        </figure> -->
 
-    </script>
+        <figure>
+          <figcaption>SOME Of the GOOD Exercises</figcaption>
+          <img src="Images/2025-02-09 113339.png" alt="workout" id="1">
+          <!-- <img src="Images/2025-02-09 at 11.29.36.jpg" alt=""> -->
+          <img src="Images/Screenshot 2025-02-09 113447.png" alt="" id="2">
+          <img src="Images/Screenshot 2025-02-09 113715.png" alt="" id="3">
+          <img src="Images/Screenshot 2025-02-09 113756.png" alt="" id="4">
+          <img src="Images/image.png" alt="" id="5">
+        </figure>
+      </div>
+      
+    </section>
+    <script src="index.js"></script>
   </body>
 </html>
