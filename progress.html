@@ -4,16 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Progress</title>
+    <script src="https://unpkg.com/scrollreveal"></script>
     <style>
       body {
         font-family: fantasy;
         margin: 0;
         padding: 0;
+        background: linear-gradient(100deg, #f7f8f1, #000);
       }
- nav ul {
+      nav {
+        position: relative;
+        z-index: 10;
+      }
+      nav ul {
         list-style-type: none;
         padding-left: 10px;
         gap: 10px;
+        z-index: 5;
+        display: flex;
+        justify-content: center;
       }
       nav ul li {
         display: inline;
@@ -22,40 +31,59 @@
       nav ul li a {
         text-decoration: none;
         color: black;
-        font-size: 20px;
+        font-size: 25px;
       }
-      .content {
+      nav ul .account {
+        display: flex;
+        /* justify-content: end; */
+        justify-content: space-between;
+        padding: 3px 0px 10px 22rem;
+        margin-right: 20px;
+      }
+      nav ul .account button {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 6px;
+      }
+      #sign-up {
+        background: #383737;
+        color: white;
+      }
+      #login {
+        background: rgb(30, 114, 30);
+        color: white;
+      }
+      .progress {
         padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        place-content: center;
       }
-      .content h2 {
-        font-size: 30px;
+      .progress h2 {
+        font-size: 25px;
+        letter-spacing: 2px;
+        font-weight: 500;
+        color: rgb(41, 77, 65);
       }
-      .content p {
+      .progress p {
         font-size: 18px;
+        letter-spacing: 2px;
       }
       .progress-section {
         margin-top: 20px;
+        background-color: azure;
+        align-content: center;
+        padding: 10px;
       }
       .progress-section h3 {
         font-size: 25px;
+        letter-spacing: 2px;
+        font-weight: 500;
+        color: rgb(145, 95, 21);
       }
       .progress-section p {
         font-size: 16px;
-      }
-      .contact-form {
-        background: #bea8a8;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        min-height: 50vh;
-        min-width: 50vw;
-      }
-      .contact-form input {
-        position: absolute;
-        
-      }
-      .contact-form label {
-        position: absolute;
       }
     </style>
   </head>
@@ -68,16 +96,29 @@
         <li><a href="nutrition.html">Nutrition</a></li>
         <li><a href="progress.html">Progress</a></li>
         <li><a href="workouts.html">Workouts</a></li>
+        <hr />
+        <div class="account">
+          <button id="sign-up">Sign Up</button>
+          <button id="login">Login</button>
+        </div>
       </ul>
     </nav>
-    <div class="content">
-      <h2>Your Progress</h2>
-      <p>
-        Tracking your progress is essential to achieving your fitness goals. At
-        FitFocus, we provide you with the tools to monitor your improvements and
-        stay motivated.
-      </p>
-      <div class="progress-section">
+    <div class="content progress">
+      <div class="progress-track">
+        <h2>
+          Your Progress
+          <img
+            src="https://imgs.search.brave.com/Kb2z1nTLybZFs1CV7VXBhCx4fGNWnQFo--Hw0xmQHzc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9taWNy/YXMub3JnL3dpa2kv/aW1hZ2VzL2MvYzAv/V29ya19Jbl9Qcm9n/cmVzcy5wbmc_MjAx/NzExMjYxNzIwNDM"
+            height="30px"
+          />
+        </h2>
+        <p>
+          Tracking your progress is essential to achieving your fitness goals.
+          At FitFocus, we provide you with the tools to monitor your
+          improvements and stay motivated.
+        </p>
+      </div>
+      <div class="progress-section 1">
         <h3>Weight Tracking</h3>
         <p>
           Keep track of your weight changes over time. Regularly updating your
@@ -85,7 +126,7 @@
           necessary adjustments to your diet and exercise routine.
         </p>
       </div>
-      <div class="progress-section">
+      <div class="progress-section 2">
         <h3>Workout Logs</h3>
         <p>
           Log your workouts to see how far you've come. Recording your
@@ -93,7 +134,7 @@
           endurance improvements.
         </p>
       </div>
-      <div class="progress-section">
+      <div class="progress-section 3">
         <h3>Body Measurements</h3>
         <p>
           Measure your body dimensions to monitor changes in muscle mass and fat
@@ -101,7 +142,7 @@
           a more comprehensive view of your progress.
         </p>
       </div>
-      <div class="progress-section">
+      <div class="progress-section 4">
         <h3>Progress Photos</h3>
         <p>
           Take progress photos to visually document your transformation.
@@ -109,12 +150,29 @@
           see the results of your hard work.
         </p>
       </div>
+      <div class="progress-section 5">
+        <h3>Nutrition Tracking</h3>
+        <p>
+          Monitor your daily nutrition intake to ensure you're meeting your
+          dietary goals. Keeping track of your meals and nutrients helps you
+          stay on track with your fitness objectives.
+        </p>
+      </div>
+      <div class="progress-section 6">
+        <h3>Sleep Tracking</h3>
+        <p>
+          Track your sleep patterns to ensure you're getting enough rest.
+          Quality sleep is essential for recovery and overall well-being.
+        </p>
+      </div>
+      <div class="progress-section 7">
+        <h3>Hydration Tracking</h3>
+        <p>
+          Keep track of your daily water intake to stay hydrated. Proper
+          hydration is crucial for optimal performance and health.
+        </p>
+      </div>
     </div>
-    <div class="contact-form">
-      <form method="post">
-        <label for="name">Name</label>
-        <input type="text" id="name" />
-      </form>
-    </div>
+    <script src="progress.js"></script>
   </body>
 </html>

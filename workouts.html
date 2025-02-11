@@ -1,87 +1,153 @@
-<!-- <style>
-      nav ul {
-        display: flex;
-        list-style: none;
-        padding-left: 10px;
-        gap: 10px;
-      }
-      nav ul li a {
-        text-decoration: none;
-        color: black;
-        font-size: 20px;
-      }
-    </style>
-<nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contactus.html">Contact</a></li>
-    <li><a href="nutrition.html">Nutrition</a></li>
-    <li><a href="progress.html">Progress</a></li>
-    <li><a href="workouts.html">Workouts</a></li>
-  </ul>
-</nav> -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Workouts</title>
+    <script src="https://unpkg.com/scrollreveal"></script>
     <style>
-      nav ul {
-        list-style-type: none;
-        padding-left: 10px;
-        gap: 10px;
-        font-family: fantasy;
-        letter-spacing: 2px;
-      }
-      nav ul li {
-        display: inline;
-        margin-right: 20px;
-      }
-      nav ul li a {
-        text-decoration: none;
-        color: black;
-        font-size: 20px;
-      }
       body {
         font-family: sans-serif;
         font-weight: 300;
         word-spacing: 8px;
         margin: 0;
         padding: 0;
-        /* background-color: bisque; */
-        background-image: url("Images/freepik__upload__2567.jpg");
-        background-size: contain;
-        background-position: right;
+        /* background-image: url("Images/2025-02-09 at 11.29.36.jpg");
+        background-repeat: no-repeat;
+        mask-image: url(Images/logo2.png);
+        mask-repeat: no-repeat; */
+        background: linear-gradient(170deg, #666168 0%, #c0c3a2),
+          url("Images/image.png");
+        background-size: cover, contain;
+        background-repeat: no-repeat, no-repeat;
+        background-position: center, right;
       }
-     
-      .content {
+      nav {
+        position: relative;
+        z-index: 10;
+      }
+      nav ul {
+        list-style-type: none;
+        padding-left: 10px;
+        gap: 10px;
+        z-index: 5;
+        display: flex;
+        justify-content: center;
+      }
+      nav ul li {
+        display: inline;
+        margin-right: 20px;
+        font-family: fantasy;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: black;
+        font-size: 25px;
+      }
+      nav ul .account {
+        display: flex;
+        /* justify-content: end; */
+        justify-content: space-between;
+        padding: 3px 0px 10px 22rem;
+        margin-right: 20px;
+      }
+      nav ul .account button {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 6px;
+      }
+      #sign-up {
+        background: #383737;
+        color: white;
+      }
+      #login {
+        background: rgb(30, 114, 30);
+        color: white;
+      }
+      .container-work {
         padding: 20px;
+        /* background: rgb(167, 159, 154); */
+        background: linear-gradient(100deg, rgb(190, 126, 126), white);
       }
-      .content h2 {
+      h2 {
         padding-left: 40%;
         font-size: 30px;
         color: rgb(150, 89, 46);
         font-family: fantasy;
-        font-size: 2rem;
+        font-size: 3rem;
         font-weight: 600;
       }
-      .content p {
+      p {
         font-size: 18px;
       }
       .workout {
-        margin-bottom: 20px;
+        /* margin-bottom: 20px; */
+        padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        place-content: center;
       }
       .workout h3 {
-        font-size: 25px;
+        font-size: 35px;
         font-family: fantasy;
         font-weight: 300;
         letter-spacing: 4px;
       }
       .workout p {
-        font-size: 16px;
+        font-size: 1rem;
+        max-width: 60%;
+      }
+      .cardio-work,
+      .strength,
+      .bg-workouts,
+      .hiit,
+      .yoga {
+        position: relative;
+        /* margin-left: 10px; */
+      }
+      .cardio-work::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 50px;
+        background-image: url("https://imgs.search.brave.com/kB39Ll9IEVH0uxIuR7G9r8NvCRpM3RIaY6LfeXL3LfE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4y/Lmljb25maW5kZXIu/Y29tL2RhdGEvaWNv/bnMvZml0bmVzcy1h/bmQtaGVhbHRoeS0z/LzQ4LzQtS2V0dGxl/YmVsbHMtMTI4LnBu/Zw");
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 0.3; /* Adjust the opacity value as needed */
+        z-index: -1;
+      }
+      .strength::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 50px;
+        width: 50px;
+        background-image: url("https://imgs.search.brave.com/cH69yswcoWUw896NH9yRLbaJJnSnGs0TGfe1ObPGwqo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5nYWxsLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvNS9Xb3Jr/b3V0LVBORy1GcmVl/LURvd25sb2FkLnBu/Zw");
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -1;
+        opacity: 0.3;
+      }
+      .yoga::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 50px;
+        width: 50px;
+        background-image: url("https://www.thegoodbody.com/wp-content/uploads/2019/05/Cat-Cow-Pose.png");
+        background: transparent;
+        background-position: left;
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: -1;
+        opacity: 0.3;
       }
     </style>
   </head>
@@ -94,32 +160,46 @@
         <li><a href="nutrition.html">Nutrition</a></li>
         <li><a href="progress.html">Progress</a></li>
         <li><a href="workouts.html">Workouts</a></li>
+        <hr />
+        <div class="account">
+          <button id="sign-up">Sign Up</button>
+          <button id="login">Login</button>
+        </div>
       </ul>
     </nav>
-    <div class="content">
+    <div class="container-work">
       <h2>Our Workouts</h2>
       <div class="workout">
-        <h3>Cardio Workouts</h3>
-        <p>
-          Boost your heart rate and burn calories with our high-energy cardio
-          workouts. Perfect for improving cardiovascular health and endurance.
-        </p>
+        <div class="workout cardio-work">
+          <h3>
+            Cardio Workouts
+            <!-- <img
+              src="https://imgs.search.brave.com/kB39Ll9IEVH0uxIuR7G9r8NvCRpM3RIaY6LfeXL3LfE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4y/Lmljb25maW5kZXIu/Y29tL2RhdGEvaWNv/bnMvZml0bmVzcy1h/bmQtaGVhbHRoeS0z/LzQ4LzQtS2V0dGxl/YmVsbHMtMTI4LnBu/Zw"
+              alt="cardio"
+              height="50px"
+            /> -->
+          </h3>
+          <p>
+            Boost your heart rate and burn calories with our high-energy cardio
+            workouts. Perfect for improving cardiovascular health and endurance.
+          </p>
+        </div>
       </div>
-      <div class="workout">
+      <div class="workout strength">
         <h3>Strength Training</h3>
         <p>
           Build muscle and increase strength with our comprehensive strength
           training programs. Suitable for all fitness levels.
         </p>
       </div>
-      <div class="workout">
+      <div class="workout yoga">
         <h3>Yoga and Flexibility</h3>
         <p>
           Enhance your flexibility and reduce stress with our yoga and
           stretching routines. Ideal for improving overall well-being.
         </p>
       </div>
-      <div class="workout">
+      <div class="workout hiit">
         <h3>HIIT Workouts</h3>
         <p>
           Maximize your workout efficiency with our High-Intensity Interval
@@ -127,7 +207,7 @@
           endurance.
         </p>
       </div>
-      <div class="workout">
+      <div class="workout bg-workouts">
         <h3>Beginner Workouts</h3>
         <p>
           Start your fitness journey with our beginner-friendly workouts.
@@ -135,5 +215,6 @@
         </p>
       </div>
     </div>
+    <script src="workout.js"></script>
   </body>
 </html>

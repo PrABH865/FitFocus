@@ -6,21 +6,30 @@
     <title>Contact Us</title>
     <style>
       body {
-       font-family: fantasy;
+        font-family: fantasy;
         margin: 0;
         padding: 0;
-        /* background: #a18888; */
-        background-image: url("https://img.freepik.com/free-vector/cartoon-satisfied-customer-calling-user-helpline-operator-man-headset_33099-360.jpg?semt=ais_hybrid");
+        background: #a18888;
+        /* background-clip: border-box; */
+        background-image: url("Images/book_15475261\ \(1\).png");
         background-repeat: no-repeat;
-        background-position: right;
-        background-clip: border-box;
+        background-position: left;
+        background-size: 22rem;
+        margin-left: 1rem;
+        /* background: linear-gradient(170deg, #666168 0%, #c0c3a2); */
         /* backdrop-filter: blur(3px); */
       }
+            nav {
+        position: relative;
+        z-index: 10;
+      }
       nav ul {
-        display: flex;
-        list-style: none;
+        list-style-type: none;
         padding-left: 10px;
         gap: 10px;
+        z-index: 5;
+        display: flex;
+        justify-content: center;
       }
       nav ul li {
         display: inline;
@@ -29,7 +38,27 @@
       nav ul li a {
         text-decoration: none;
         color: black;
-        font-size: 20px;
+        font-size: 25px;
+      }
+      nav ul .account {
+        display: flex;
+        /* justify-content: end; */
+        justify-content: space-between;
+        padding: 3px 0px 10px 22rem ;
+        margin-right: 20px;
+      }
+      nav ul .account button {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 6px;
+      }
+      #sign-up {
+        background: #383737;
+        color: white;
+      }
+      #login {
+        background: rgb(30, 114, 30);
+        color: white;
       }
       .content {
         padding: 20px;
@@ -41,73 +70,46 @@
         font-size: 18px;
       }
       fieldset {
-        margin-left: 2.3rem;
+        /* margin-left: 2.3rem; */
+        background-image: url("https://imgs.search.brave.com/clmqD4gI3YkNicR9f927mfmRS6eDo4PeljjXSV3ep9Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9vbmxp/bmVwbmd0b29scy5j/b20vaW1hZ2VzL2V4/YW1wbGVzLW9ubGlu/ZXBuZ3Rvb2xzL2Rl/c2VydC10cmFuc3Bh/cmVudC5wbmc");
+        background-size: cover;
         padding: 60px;
         border-radius: 10px;
       }
       fieldset legend {
         font-size: 30px;
-        color: #212422;
+        color: #b7c5bc;
       }
       .contact-form {
-        display: flex;
+        margin-right: 2rem;
+        /* position: relative; */
+        right: 150px;
+        padding-right: 200px;
+      }
+      .contact-form fieldset {
         margin-top: 20px;
         position: relative;
+        right: auto;
+        backdrop-filter: blur(10px);
       }
-      .contact-form input {
-        position: absolute;
-        padding: 0 10px;
-        transition: 0.3s ease;
-        outline: none;
-        border-radius: 10px;
-        border: 2px solid;
-        line-height: 30px;
-        z-index: 1111;
+      form {
+        display: flex;
+        flex-direction: column;
       }
-      .contact-form .label {
-        /* display: block;
-        margin-bottom: 5px;
-        font-size: 16px; */
-        position: absolute;
-        transition: 0.3s ease;
-        padding: 6px 18px;
-        margin: 0 10px;
-      
-      }
-      input:focus,
-      input:valid {
-        color: #45a049;
-        border: 2px solid green;
-      }
-      input:focus + .label,
-      input:valid + .label {
-        transform: translate(-16px, -16px) scale(1);
-        /* line-height: 60px; */
-        z-index: 1112;
-        color: #45a049;
-      }
-      .contact-form textarea {
+      form input {
         width: 100%;
-        padding: 10px;
-        margin-bottom: 10px;
-        font-size: 16px;
+        padding: 7px;
       }
-      .contact-form button {
-        margin-top: 100px;
-        padding: 10px 20px;
-        font-size: 16px;
-        background-color: #4caf50;
-        color: white;
-        border: none;
-        cursor: pointer;
-      }
-      .contact-form button:hover {
-        background-color: #45a049;
+      form button {
+        margin-top: 6px;
+        padding-top: 5px;
+        background: rgb(5, 61, 5);
+        color: #c0c3a2;
       }
     </style>
   </head>
   <body>
-    <nav>
+      <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -115,29 +117,40 @@
         <li><a href="nutrition.html">Nutrition</a></li>
         <li><a href="progress.html">Progress</a></li>
         <li><a href="workouts.html">Workouts</a></li>
+        <hr>
+        <div class="account">
+          <button id="sign-up">Sign Up</button>
+          <button id="login">Login</button>
+        </div>
       </ul>
     </nav>
     <div class="content">
       <div class="contact-form">
+
         <fieldset>
           <legend><h2>Contact Us</h2></legend>
           <form method="post">
-            <input type="text" id="name" name="name" required />
             <label for="name" class="label">Name</label>
-            <!-- <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required />
-
+            <input type="text" id="name" name="name" placeholder="Enter your name" required />
+            <br>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required />
+            <br>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Enter your password">
+            <br>
             <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea> -->
+            <textarea id="message" name="message" aria-placeholder="Enter the feedback" rows="5" required></textarea>
 
             <button type="submit">Submit</button>
           </form>
         </fieldset>
+        <p>
+          If you have any questions, feedback, or need assistance, please feel
+          free to reach out to us. We're here to help you on your fitness
+          journey.
+        </p>
       </div>
     </div>
-    <p>
-      If you have any questions, feedback, or need assistance, please feel free
-      to reach out to us. We're here to help you on your fitness journey.
-    </p>
   </body>
 </html>

@@ -8,10 +8,17 @@
       body {
         font-family: fantasy;
       }
+         nav {
+        position: relative;
+        z-index: 10;
+      }
       nav ul {
         list-style-type: none;
         padding-left: 10px;
         gap: 10px;
+        z-index: 5;
+        display: flex;
+        justify-content: center;
       }
       nav ul li {
         display: inline;
@@ -20,12 +27,32 @@
       nav ul li a {
         text-decoration: none;
         color: black;
-        font-size: 20px;
+        font-size: 25px;
+      }
+      nav ul .account {
+        display: flex;
+        /* justify-content: end; */
+        justify-content: space-between;
+        padding: 3px 0px 10px 22rem ;
+        margin-right: 20px;
+      }
+      nav ul .account button {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 6px;
+      }
+      #sign-up {
+        background: #383737;
+        color: white;
+      }
+      #login {
+        background: rgb(30, 114, 30);
+        color: white;
       }
     </style>
   </head>
   <body>
-    <nav>
+        <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -33,6 +60,11 @@
         <li><a href="nutrition.html">Nutrition</a></li>
         <li><a href="progress.html">Progress</a></li>
         <li><a href="workouts.html">Workouts</a></li>
+        <hr>
+        <div class="account">
+          <button id="sign-up">Sign Up</button>
+          <button id="login">Login</button>
+        </div>
       </ul>
     </nav>
     <video

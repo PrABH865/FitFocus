@@ -16,7 +16,7 @@
         font-family: fantasy;
         margin: 0;
         padding: 0;
-        background: linear-gradient(100deg, #c33745 0%, #c0c3a2 100%)
+        background: linear-gradient(100deg, #3d3c3c 0%, #c0c3a2 100%)
       }
       nav {
         position: relative;
@@ -38,6 +38,26 @@
         text-decoration: none;
         color: black;
         font-size: 25px;
+      }
+      nav ul .account {
+        display: flex;
+        /* justify-content: end; */
+        justify-content: space-between;
+        padding: 3px 0px 10px 22rem ;
+        margin-right: 20px;
+      }
+      nav ul .account button {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 6px;
+      }
+      #sign-up {
+        background: #383737;
+        color: white;
+      }
+      #login {
+        background: rgb(30, 114, 30);
+        color: white;
       }
       .hero {
         /* background-image: url("https://example.com/hero-image.jpg"); */
@@ -64,8 +84,10 @@
         position: relative;
       }
       .hero img {
-        background: transparent;
+        /* background: transparent; */
+        /* background-color: red; */
         mix-blend-mode: color-burn;
+        background-blend-mode: saturation;
         border-radius: 20px;
         /* margin-top: 0; */
         height: 5rem;
@@ -91,6 +113,7 @@
       }
       .content h2 {
         font-size: 30px;
+        color: rgb(65, 11, 11);
       }
       .content p {
         font-size: 18px;
@@ -130,11 +153,13 @@
         padding-bottom: 60px;
       }
       .services-container{
-        background: #4e4848;
+        /* background: #4e4848; */
+        background: linear-gradient(200deg ,rgb(196, 58, 58) , rgb(209, 200, 200));
       }
       figure {
         display: flex;
         justify-content: center;
+        align-items: center;
         /* flex-direction: row; */
         flex-wrap: wrap;
        padding-bottom:50px;
@@ -143,12 +168,20 @@
       figure > figcaption {
         font-size: 5rem;
       }
+      .img-container {
+        display: flex;
+      }
       figure > img {
-        height: 12rem;
+        height: 17rem;
         width: auto;
-        /* aspect-ratio: auto; */
-        filter: contrast(2.5);
-        background-blend-mode: color-burn;
+        filter: brightness(8)
+      }
+
+      img:hover {
+        filter: contrast(2) saturate(6);
+         transform: scale(6);
+         filter: drop-shadow(20px 20px rgb(82, 85, 78));
+        /* border: 3px solid; */
       }
       /* figure >.img1 +.img2 {
         aspect-ratio: 4/3;
@@ -164,10 +197,15 @@
         <li><a href="nutrition.html">Nutrition</a></li>
         <li><a href="progress.html">Progress</a></li>
         <li><a href="workouts.html">Workouts</a></li>
+        <hr>
+        <div class="account">
+          <button id="sign-up">Sign Up</button>
+          <button id="login">Login</button>
+        </div>
       </ul>
     </nav>
     <div class="hero">
-      <img src="Images/logo2.png" height="100px" alt="" id="logo">
+      <img src="Images/logo2.png" height="100px" alt="logo" id="logo">
       <video
         src="video/mixkit-man-jogging-on-a-pedestrian-bridge-in-the-city-40766-hd-ready.mp4"
         autoplay+
@@ -187,6 +225,7 @@
       <button id="servicesBTN">Our Exvercises</button>
     </div>
     </div>
+
     <section id="services">
       <div class="services-container">
         <!-- <figure>
@@ -200,15 +239,32 @@
 
         <figure>
           <figcaption>SOME Of the GOOD Exercises</figcaption>
-          <img src="Images/2025-02-09 113339.png" alt="workout" id="1">
-          <!-- <img src="Images/2025-02-09 at 11.29.36.jpg" alt=""> -->
-          <img src="Images/Screenshot 2025-02-09 113447.png" alt="" id="2">
-          <img src="Images/Screenshot 2025-02-09 113715.png" alt="" id="3">
-          <img src="Images/Screenshot 2025-02-09 113756.png" alt="" id="4">
-          <img src="Images/image.png" alt="" id="5">
+          <div class="img-container">
+
+            <img src="Images/2025-02-09 113339.png" alt="workout" id="1" class="contrast">
+            <!-- <img src="Images/2025-02-09 at 11.29.36.jpg" alt=""> -->
+            <img src="Images/Screenshot 2025-02-09 113447.png" alt="" id="2" class="contrast">
+            <img src="Images/Screenshot 2025-02-09 113715.png" alt="" id="3" class="contrast">
+            <img src="Images/Screenshot 2025-02-09 113756.png" alt="" id="4" class="contrast">
+            <!-- <img src="Images/image.png" alt="" id="5" class="contrast"> -->
+          </div>
         </figure>
       </div>
       
+    </section>
+
+    <section id="footer">
+      <div class="footer-container">
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
     </section>
     <script src="index.js"></script>
   </body>

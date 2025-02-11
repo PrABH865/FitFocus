@@ -11,11 +11,17 @@
         padding: 0;
         background: #9e8e8e;
       }
+            nav {
+        position: relative;
+        z-index: 10;
+      }
       nav ul {
-        display: flex;
-        list-style: none;
+        list-style-type: none;
         padding-left: 10px;
         gap: 10px;
+        z-index: 5;
+        display: flex;
+        justify-content: center;
       }
       nav ul li {
         display: inline;
@@ -24,7 +30,27 @@
       nav ul li a {
         text-decoration: none;
         color: black;
-        font-size: 20px;
+        font-size: 25px;
+      }
+      nav ul .account {
+        display: flex;
+        /* justify-content: end; */
+        justify-content: space-between;
+        padding: 3px 0px 10px 22rem ;
+        margin-right: 20px;
+      }
+      nav ul .account button {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 6px;
+      }
+      #sign-up {
+        background: #383737;
+        color: white;
+      }
+      #login {
+        background: rgb(30, 114, 30);
+        color: white;
       }
       .content {
         padding: 20px;
@@ -34,6 +60,7 @@
       }
       .content p {
         font-size: 18px;
+        transform: ;
       }
       .team {
         margin-top: 20px;
@@ -47,7 +74,7 @@
     </style>
   </head>
   <body>
-    <nav>
+       <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -55,6 +82,11 @@
         <li><a href="nutrition.html">Nutrition</a></li>
         <li><a href="progress.html">Progress</a></li>
         <li><a href="workouts.html">Workouts</a></li>
+        <hr>
+        <div class="account">
+          <button id="sign-up">Sign Up</button>
+          <button id="login">Login</button>
+        </div>
       </ul>
     </nav>
     <div class="content">
@@ -65,7 +97,7 @@
         <p>Our team of experienced fitness professionals is here to guide and support you every step of the way. We are passionate about fitness and committed to helping you reach your full potential.</p>
       </div>
       <div class="team">
-        <h3>Our Vision</h3>
+        <h3>Our Vision</h3>+
         <p>We envision a world where everyone has the opportunity to lead a healthy and active lifestyle. At FitFocus, we strive to make fitness accessible, enjoyable, and sustainable for all.</p>
       </div>
     </div>
