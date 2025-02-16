@@ -54,7 +54,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const ourExercises = document.querySelector("#services");
 const btn = document.querySelector("#servicesBTN");
+const arrowUp = document.querySelector("#arrow-up");
 
 btn.addEventListener("click", () => {
   ourExercises.scrollIntoView({ behavior: "smooth" });
 });
+
+arrowUp.addEventListener('click', ()=> {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+})

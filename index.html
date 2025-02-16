@@ -9,6 +9,14 @@
       href="https://t4.ftcdn.net/jpg/01/82/48/97/240_F_182489700_p3ePNdreuiMMtiF8M4LbETN3QW52wg2c.jpg"
       type="image/x-icon"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <script src="https://unpkg.com/scrollreveal"></script>
 
     <style>
@@ -16,7 +24,7 @@
         font-family: fantasy;
         margin: 0;
         padding: 0;
-        background: linear-gradient(100deg, #3d3c3c 0%, #c0c3a2 100%)
+        background: linear-gradient(100deg, #3d3c3c 0%, #c0c3a2 100%);
       }
       nav {
         position: relative;
@@ -33,6 +41,26 @@
       nav ul li {
         display: inline;
         margin-right: 20px;
+        position: relative;
+      }
+      nav ul li::after {
+        content: "";
+        position: absolute;
+        width: 0;
+      }
+      nav ul li:hover::after {
+        content: "";
+        position: absolute;
+        top: 3.25rem;
+        left: 0;
+        background: #504545;
+        color: beige;
+        height: 7px;
+        width: 100%;
+        transition: all 0.4s ease-in-out;
+      }
+      nav ul li .active {
+        color: rgb(65, 11, 11);
       }
       nav ul li a {
         text-decoration: none;
@@ -43,7 +71,7 @@
         display: flex;
         /* justify-content: end; */
         justify-content: space-between;
-        padding: 3px 0px 10px 22rem ;
+        padding: 3px 0px 10px 22rem;
         margin-right: 20px;
       }
       nav ul .account button {
@@ -91,7 +119,7 @@
         border-radius: 20px;
         /* margin-top: 0; */
         height: 5rem;
-        width:auto;
+        width: auto;
         top: 0;
         position: absolute;
         padding-left: auto;
@@ -109,7 +137,7 @@
         flex-direction: column;
       }
       .content h1 {
-         font-size: 5rem;
+        font-size: 5rem;
       }
       .content h2 {
         font-size: 30px;
@@ -140,21 +168,25 @@
         background: none;
         background-blend-mode: multiply;
         outline: none;
-        border: .6px dotted;
+        border: 0.6px dotted;
         border-radius: 4px;
         /* padding: 50px; */
         font-size: 2rem;
         font-family: fantasy;
       }
       #servicesBTN:hover {
-        border: .5px solid;
+        border: 0.5px solid;
       }
       #services {
         padding-bottom: 60px;
       }
-      .services-container{
+      .services-container {
         /* background: #4e4848; */
-        background: linear-gradient(200deg ,rgb(196, 58, 58) , rgb(209, 200, 200));
+        background: linear-gradient(
+          200deg,
+          rgb(78, 72, 72),
+          rgb(209, 200, 200)
+        );
       }
       figure {
         display: flex;
@@ -162,7 +194,7 @@
         align-items: center;
         /* flex-direction: row; */
         flex-wrap: wrap;
-       padding-bottom:50px;
+        padding-bottom: 50px;
         height: 80vh;
       }
       figure > figcaption {
@@ -174,30 +206,35 @@
       figure > img {
         height: 17rem;
         width: auto;
-        filter: brightness(8)
+        filter: brightness(8);
       }
 
       img:hover {
         filter: contrast(2) saturate(6);
-         transform: scale(6);
-         filter: drop-shadow(20px 20px rgb(82, 85, 78));
+        transform: scale(6);
+        filter: drop-shadow(20px 20px rgb(82, 85, 78));
         /* border: 3px solid; */
       }
       /* figure >.img1 +.img2 {
         aspect-ratio: 4/3;
       } */
+      .footer {
+        display: flex;
+        /* flex-direction: row; */
+  
+      }
     </style>
   </head>
   <body>
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contactus.html">Contact</a></li>
         <li><a href="nutrition.html">Nutrition</a></li>
         <li><a href="progress.html">Progress</a></li>
         <li><a href="workouts.html">Workouts</a></li>
-        <hr>
+        <hr />
         <div class="account">
           <button id="sign-up">Sign Up</button>
           <button id="login">Login</button>
@@ -205,7 +242,7 @@
       </ul>
     </nav>
     <div class="hero">
-      <img src="Images/logo2.png" height="100px" alt="logo" id="logo">
+      <img src="Images/logo2.png" height="100px" alt="logo" id="logo" />
       <video
         src="video/mixkit-man-jogging-on-a-pedestrian-bridge-in-the-city-40766-hd-ready.mp4"
         autoplay+
@@ -221,9 +258,13 @@
         workouts, nutrition plans, and progress tracking features to get started
         on your fitness journey today.
       </p>
-      <img src="Images/drawn_arrow.png" alt="drawn_arrow" width="80px" id="arrow_drawn">
+      <img
+        src="Images/drawn_arrow.png"
+        alt="drawn_arrow"
+        width="80px"
+        id="arrow_drawn"
+      />
       <button id="servicesBTN">Our Exvercises</button>
-    </div>
     </div>
 
     <section id="services">
@@ -240,31 +281,45 @@
         <figure>
           <figcaption>SOME Of the GOOD Exercises</figcaption>
           <div class="img-container">
-
-            <img src="Images/2025-02-09 113339.png" alt="workout" id="1" class="contrast">
+            <img
+              src="Images/2025-02-09 113339.png"
+              alt="workout"
+              id="1"
+              class="contrast"
+            />
             <!-- <img src="Images/2025-02-09 at 11.29.36.jpg" alt=""> -->
-            <img src="Images/Screenshot 2025-02-09 113447.png" alt="" id="2" class="contrast">
-            <img src="Images/Screenshot 2025-02-09 113715.png" alt="" id="3" class="contrast">
-            <img src="Images/Screenshot 2025-02-09 113756.png" alt="" id="4" class="contrast">
+            <img
+              src="Images/Screenshot 2025-02-09 113447.png"
+              alt=""
+              id="2"
+              class="contrast"
+            />
+            <img
+              src="Images/Screenshot 2025-02-09 113715.png"
+              alt=""
+              id="3"
+              class="contrast"
+            />
+            <img
+              src="Images/Screenshot 2025-02-09 113756.png"
+              alt=""
+              id="4"
+              class="contrast"
+            />
             <!-- <img src="Images/image.png" alt="" id="5" class="contrast"> -->
           </div>
         </figure>
       </div>
-      
     </section>
 
     <section id="footer">
       <div class="footer-container">
         <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li>Services</li>
+          <li>Our terms</li>
         </ul>
       </div>
+      <i class="fa-solid fa-arrow-up" id="arrow-up"></i>
     </section>
     <script src="index.js"></script>
   </body>

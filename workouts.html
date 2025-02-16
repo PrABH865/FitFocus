@@ -67,7 +67,7 @@
       .container-work {
         padding: 20px;
         /* background: rgb(167, 159, 154); */
-        background: linear-gradient(100deg, rgb(190, 126, 126), white);
+        background: linear-gradient(100deg, rgb(202, 114, 114), white);
       }
       h2 {
         padding-left: 40%;
@@ -135,17 +135,48 @@
         opacity: 0.3;
       }
       .yoga::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
-        height: 50px;
-        width: 50px;
+        height: 4rem;
+        width: 7rem;
         background-image: url("https://www.thegoodbody.com/wp-content/uploads/2019/05/Cat-Cow-Pose.png");
-        background: transparent;
+        /* background: transparent; */
         background-position: left;
         background-size: cover;
         background-repeat: no-repeat;
+        background-blend-mode: difference;
+        z-index: -1;
+        opacity: 0.3;
+      }
+      .hiit::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 4rem;
+        width: 7rem;
+        background-image: url("https://www.shutterstock.com/shutterstock/photos/1421638076/display_1500/stock-photo-hiit-sportswear-sport-shoes-and-helpful-gadgets-blue-sneakers-red-bottle-portable-music-player-1421638076.jpg");
+        background-position: left;
+        /* background-size: cover; */
+        background-repeat: no-repeat;
+        background-blend-mode: luminosity;
+        z-index: -1;
+        opacity: 0.3;
+      }
+      .bg-workouts::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 4rem;
+        width: 7rem;
+        background-image: url(Images/dumbbel_6102523.png);
+        background-position: left;
+        /* background-size: cover; */
+        /* background-repeat: no-repeat; */
+        background-blend-mode: difference;
         z-index: -1;
         opacity: 0.3;
       }

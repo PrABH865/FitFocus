@@ -6,100 +6,72 @@
     <title>About</title>
     <style>
       body {
-        font-family: fantasy;
-        margin: 0;
-        padding: 0;
-        background: #9e8e8e;
-      }
-            nav {
-        position: relative;
-        z-index: 10;
-      }
-      nav ul {
-        list-style-type: none;
-        padding-left: 10px;
-        gap: 10px;
-        z-index: 5;
         display: flex;
         justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #895151;
+        margin: 0;
+        padding: 100px;
+        box-sizing: border-box;
       }
-      nav ul li {
-        display: inline;
-        margin-right: 20px;
+
+      .coin-container {
+        width: 100px;
+        height: 100px;
+        perspective: 1000px;
       }
-      nav ul li a {
-        text-decoration: none;
-        color: black;
-        font-size: 25px;
+
+      .coin {
+        width: 100px;
+        height: 100px;
+        /* background: #000; */
+        position: relative;
+        transition: 1s all ease-in-out;
+        /* animation: left  5s .5s alternate ease-in-out; */
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
       }
-      nav ul .account {
-        display: flex;
-        /* justify-content: end; */
-        justify-content: space-between;
-        padding: 3px 0px 10px 22rem ;
-        margin-right: 20px;
+
+      .coin::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-image: url("https://imgs.search.brave.com/2QA5dWO1FSV9KmNp7TA8g45yyknJcAneVuprXJgmDRE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wbmcu/cG5ndHJlZS5jb20v/cG5nLWNsaXBhcnQv/MjAyMjAyMjIvb3Vy/bWlkL3BuZ3RyZWUt/Z29sZGVuLWRvbGxh/ci11cy1jb2luLXBu/Zy1mcmVlLWRvd25s/b2FkLXBuZy1pbWFn/ZV80NDQ5MTkwLnBu/Zw");
+        background-size: cover;
+        position: absolute;
+        top: 10px;
+        /* animation: 0.5s linear 1s infinite alternate flip; */
+        animation: flip-rotate .7s ease-in-out 1s infinite alternate ;
+        animation: name duration timing-function delay iteration-count direction fill-mode;
+        /* animation: flip 1s linear 1s infinite alternate ease-in-out; */
       }
-      nav ul .account button {
-        display: flex;
-        justify-content: space-between;
-        margin-left: 6px;
+
+      @keyframes flip-rotate {
+        0% {
+         transform: translate(-10px, 10px) rotateY(360deg) skew(0deg, 180deg) ;
+         /* opacity: 0; */
+          
+        }
+        100% {
+          transform: rotateY(180deg) translate(100px, 2000px);
+          opacity: 1;
+        }
       }
-      #sign-up {
-        background: #383737;
-        color: white;
-      }
-      #login {
-        background: rgb(30, 114, 30);
-        color: white;
-      }
-      .content {
-        padding: 20px;
-      }
-      .content h2 {
-        font-size: 30px;
-      }
-      .content p {
-        font-size: 18px;
-        transform: ;
-      }
-      .team {
-        margin-top: 20px;
-      }
-      .team h3 {
-        font-size: 25px;
-      }
-      .team p {
-        font-size: 16px;
+
+      @keyframes left {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(120px);
+        }
       }
     </style>
   </head>
   <body>
-       <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contactus.html">Contact</a></li>
-        <li><a href="nutrition.html">Nutrition</a></li>
-        <li><a href="progress.html">Progress</a></li>
-        <li><a href="workouts.html">Workouts</a></li>
-        <hr>
-        <div class="account">
-          <button id="sign-up">Sign Up</button>
-          <button id="login">Login</button>
-        </div>
-      </ul>
-    </nav>
-    <div class="content">
-      <h2>About FitFocus</h2>
-      <p>FitFocus is dedicated to helping you achieve your fitness goals. Our mission is to provide you with the best tools, resources, and support to make your fitness journey successful and enjoyable. Whether you're a beginner or a seasoned athlete, we have something for everyone.</p>
-      <div class="team">
-        <h3>Our Team</h3>
-        <p>Our team of experienced fitness professionals is here to guide and support you every step of the way. We are passionate about fitness and committed to helping you reach your full potential.</p>
-      </div>
-      <div class="team">
-        <h3>Our Vision</h3>+
-        <p>We envision a world where everyone has the opportunity to lead a healthy and active lifestyle. At FitFocus, we strive to make fitness accessible, enjoyable, and sustainable for all.</p>
-      </div>
+    <div class="coin-container">
+      <div class="coin"></div>
     </div>
   </body>
 </html>
